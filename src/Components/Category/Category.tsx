@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import Nav from "../Nav/Nav"
 
 
 import MealCard from './MealCard'
@@ -46,11 +47,15 @@ useEffect(() => {
     })
 }, [])
 
-    return <Container>
+    return <>  
+        
+    <Container>
     {data ? data.meals.map((item) => {
         return <MealCard key={item.idMeal} category={params.categoryName ? params.categoryName : ''} data={item} />
     }): 'loading...'}
    </Container>
+   </>
+
 }
 
 export default Category

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import Nav from "../Nav/Nav"
 
 type Food = {
         idMeal: string,
@@ -114,9 +115,11 @@ const FoodDescription:React.FC = () => {
         .then(res => {
             setData(res)            
         })
-    }, [])
+    }, [params.foodId])
 
-    return <Container>
+    return <> 
+    
+        <Container>
     <img src={data?.meals[0].strMealThumb} alt="" />
     <div className="ingredients">
        <div className="title"> Ingredients:</div>
@@ -149,6 +152,7 @@ const FoodDescription:React.FC = () => {
     </p>
   
     </Container>
+    </>
 }
 
 export default FoodDescription

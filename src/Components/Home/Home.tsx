@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import Card from "./Card"
+import Nav from "../Nav/Nav"
+
 
 type Post = {
     idCategory: string;
@@ -32,13 +34,17 @@ useEffect(() => {
     .then( response => setData(response) )
 }, [])
 
-    return <HomeContainer>
+    return <>  
+    
+    <HomeContainer>
     { data ? data.categories.map((item) => {
 
      return  <Card key={item.idCategory} data={item} />
 
     }) : 'Loading...'}
     </HomeContainer>
+    </>
+
 }
 
 export default Home 

@@ -6,7 +6,7 @@ import Category from './Components/Category/Category';
 import FoodDescription from './Components/FoodDescription/FoodDescription';
 
 import {createGlobalStyle} from "styled-components"
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link  } from "react-router-dom";
 
  const GlobalStyle = createGlobalStyle`
    *{
@@ -25,7 +25,7 @@ const App:React.FC = () => {
   return (
     <>  
     <GlobalStyle />
-     <Nav />
+    <Nav />
      <Routes>
      <Route path="/" element={<Home />} />
      <Route path="/category/:categoryName" element={<Category />} />
