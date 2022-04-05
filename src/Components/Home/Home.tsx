@@ -13,7 +13,7 @@ const HomeContainer = styled.div`
 const Home: React.FC = () => {
   const [data, setData] = useState<CategoryData | null>(null);
 
-  useEffect(() => {
+  useEffect( () => {
     fetch("https://www.themealdb.com/api/json/v1/1/categories.php")
       .then((res) => res.json())
       .then((response) => setData(response));
